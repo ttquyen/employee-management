@@ -118,7 +118,6 @@ var checkType = function () {
   if (type === "Trưởng phòng") return "truongphong";
 
   if (type === "Nhân viên") return "nhanvien";
-  console.log(type);
 
   return null;
 };
@@ -237,14 +236,11 @@ var findEmployee = function () {
 
   for (var i = 0; i < employeeList.length; i++) {
     var _employee = xepLoai(employeeList[i].giolam).toLowerCase();
-    console.log("key", keyword);
-    console.log("name", _employee);
 
     if (employeeList[i].chucvu === keyword || _employee.includes(keyword)) {
       results.push(employeeList[i]);
     }
   }
-  console.log(results);
 
   renderEmployees(results);
 };
@@ -346,7 +342,6 @@ var pattern = function (val, spanId, regex, message) {
 };
 // Option
 var option = function (val, spanId, message) {
-  console.log(message);
   if (val === "0") {
     document.getElementById(spanId).style.display = "block";
     document.getElementById(spanId).innerHTML =
